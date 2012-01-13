@@ -1,5 +1,3 @@
-require 'twss'
-
 class Plugin::Tungy < Plugin
 
   def add_routes(rp, opts)
