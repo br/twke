@@ -14,7 +14,7 @@ class Plugin::RonSwanson < Plugin
   def get_ron
 
     html = Hpricot(open('http://www.buzzfeed.com/jpmoore/the-15-best-ron-swanson-gifs'))
-    img = html.search("[@class~='post-content']").search("a[@href]").search("img[@src*=gif]")
+    img = html.search("a[@href]").search("img[@src*=anigif]")
 
     num = rand(14) - 1
 
