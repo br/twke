@@ -18,7 +18,7 @@ class Plugin::RonSwanson < Plugin
 
     num = rand(14) - 1
 
-    img[num].to_html.match(/http:.*?gif/)[0]
+    img[num].to_html.match(/http:.*?\.gif/)[0]
 
   end
 
