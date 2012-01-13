@@ -11,7 +11,7 @@ class Plugin::PugMe < Plugin
   end
 
   private
- 
+
   def get_pug
     JSON(open("http://pugme.herokuapp.com/random").read).first[1]
   end
