@@ -18,6 +18,7 @@ gem "can-has-lolcat", :git => 'https://github.com/josephruscio/can-has-lolcat.gi
 gem "papertrail-cli", "~> 0.8.2"
 
 gem 'twss'
+gem 'hpricot', "~> 0.8.5"
 
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
