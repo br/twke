@@ -5,7 +5,7 @@ class Plugin::PugMe < Plugin
   def add_routes(rp, opts)
     rp.pug do
       rp.route 'me' do |act|
-        act.say get_pug()
+        act.say get_pug
       end
     end
   end
