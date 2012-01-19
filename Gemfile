@@ -20,6 +20,8 @@ gem "papertrail-cli", "~> 0.8.2"
 gem 'twss'
 gem 'hpricot', "~> 0.8.5"
 
+gem 'httpi'
+
 # Add dependencies to develop your gem here.
 # Include everything needed to run rake, tests, features, etc.
 group :development do

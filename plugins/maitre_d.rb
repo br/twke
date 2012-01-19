@@ -1,11 +1,12 @@
 require 'json'
+require 'httpi'
 class Plugin::MaitreD < Plugin
 
   def add_routes(rp, opts)
 
     rp.route(/is (?<environment>alpha|beta|gamma|delta) available\?/i, :noprefix => true) do |act|
 
-      response = JSON.parse(open("http://maitred.bleacherreport.com/reservations/show?environment=#{act.environment}"))
+      response = JSON.parse(HTTPI.get(HTTPI::Request.new("http://maitred.bleacherreport.com/reservations/show?environment=#{act.environment}")).body)
 
       case response["status"]
       when "available"
