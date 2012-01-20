@@ -12,7 +12,7 @@ class Plugin::MaitreD < Plugin
       when "available"
         act.say "It's free, go ahead (cap #{act.environment} deploy:patch)"
       when "reserved"
-        expires = Time.at(response['expires'].to_i - 28800).strftime("%m/%d/%Y %H:%i")
+        expires = Time.at(response['expires'].to_i - 28800).strftime("%m/%d/%Y %H:%M")
         act.say "Sorry, #{response['user']} reserved this environment until #{expires}"
       end
     end
