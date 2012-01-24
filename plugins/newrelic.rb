@@ -51,7 +51,7 @@ class Plugin::Newrelic < Plugin
           measures = get_newrelic
           error_rate = measures["Error Rate"]
           response_time = measures["Response Time"]
-          if error_rate.to_f > Twke::Conf.get('newrelic.er_threshold') || response_time.to_i > Twke::Conf.get('newrelic.rt_threshold')
+          if error_rate.to_f > Twke::Conf.get('newrelic.threshold.error_rate') || response_time.to_i > Twke::Conf.get('newrelic.threshold.response_time')
             act.say "Sorry to interrupt but our error rate is at #{error_rate} and our response time is at #{response_time}. Do something!"
             told_em_at = Time.now.to_i
           end
