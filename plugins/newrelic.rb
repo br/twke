@@ -43,6 +43,7 @@ class Plugin::Newrelic < Plugin
   def newrelic_start act
     act.say "Starting error watcher"
     @error_watcher && Thread.kill(@error_watcher)
+    Thread.abort_on_exception = true
     @error_watcher = Thread.new do
       told_em_at = 0
       loop do
