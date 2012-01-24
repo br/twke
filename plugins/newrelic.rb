@@ -29,6 +29,7 @@ class Plugin::Newrelic < Plugin
 
     request                      = HTTPI::Request.new "https://api.newrelic.com/accounts/#{account_id}/applications/#{application_id}/threshold_values.xml"
     request.headers["x-api-key"] = api_key
+    request.auth.ssl.verify_mode = :none
     html                         = HTTPI.get(request).body
     xml                          = Nokogiri::XML.parse html
 
