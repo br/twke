@@ -11,7 +11,7 @@ class Plugin::Newrelic < Plugin
     end
 
     rp.route /(?<action>start|stop|check) error watcher/ do |act|
-      call("newrelic_#{act.action}", act)
+      send("newrelic_#{act.action}", act)
     end
 
     rp.route 'stop error watcher' do |act|
