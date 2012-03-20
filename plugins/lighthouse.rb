@@ -1,7 +1,7 @@
 require 'hpricot'
 require 'open-uri'
 
-class Plugin::RonSwanson < Plugin
+class Plugin::Lighthouse < Plugin
 
   def add_routes(rp, opts)
     rp.route /#(?<id>\d+)/ do |act|
